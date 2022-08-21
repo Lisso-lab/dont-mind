@@ -99,6 +99,8 @@ funcs.tween = function(inst: Instance,tween_info: TweenInfo,props)
 
     local tween: Tween = tween_service:Create(inst,tween_info,props)
     coroutine.wrap(function() tween:Play() end)()
+
+	return tween
 end
 
 return funcs
