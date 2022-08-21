@@ -55,17 +55,22 @@ end
 
 funcs.concat_tables = function(concat_to, ...)
 	local tables,c_table = {...},concat_to or {}
-	
-	for i,v in tables do
-		if type(i) == "number" then
-			c_table[#c_table + 1] = v
-		else
-			c_table[i] = v
+
+	local function asign_tabl(tabl)
+		for i,v in pairs(tabl) do
+			if type(i) == "number" then
+				c_table[#c_table+1] = v
+			else
+				c_table[i] = v
+			end
 		end
 	end
 
+	for _,v in tables do asign_tabl(v) end
+
 	return  c_table
 end
+
 
 
 
