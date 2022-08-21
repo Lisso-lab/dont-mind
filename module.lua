@@ -66,7 +66,7 @@ funcs.concat_tables = function(concat_to, ...)
 		end
 	end
 
-	for _,v in tables do asign_tabl(v) end
+	for _,v in pairs(tables) do asign_tabl(v) end
 
 	return  c_table
 end
