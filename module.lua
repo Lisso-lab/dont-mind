@@ -25,6 +25,13 @@ local funcs = {
     Version = "1.0.0"
 }
 
+funcs._round = function(num: number,div_by: number): number
+	div_by = div_by or 100
+
+	return math.round(num * 100) / div_by
+end
+
+
 funcs.get_in = function(inst: Instance, options)
 	options = do_options(options,
 		{
