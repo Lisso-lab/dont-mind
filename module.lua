@@ -1,5 +1,5 @@
 --!strict
-local tween_service: TweenService = game:GetService("RunService")
+local tween_service: TweenService = game:GetService("TweenService")
 
 local function do_options(tabl, options)
 	if type(tabl) ~= "table" then
@@ -84,6 +84,5 @@ funcs.tween = function(inst: Instance,tween_info: TweenInfo,props)
     local tween: Tween = tween_service:Create(inst,tween_info,props)
     coroutine.wrap(function() tween:Play() end)()
 end
-
 
 return funcs
