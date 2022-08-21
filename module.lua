@@ -71,7 +71,7 @@ funcs.concat_tables = function(concat_to, ...)
 	return  c_table
 end
 
-funcs.funcs.delta = function(num: number, delta_time: number)
+funcs.delta = function(num: number, delta_time: number)
 	return num / (delta_time / (1/60))
 end
 
