@@ -53,6 +53,22 @@ funcs.get_in = function(inst: Instance, options)
 	return tabl
 end
 
+funcs.concat_tables = function(concat_to, ...)
+	local tables,c_table = {...},concat_to or {}
+	
+	for i,v in tables do
+		if type(i) == "number" then
+			c_table[#c_table + 1] = v
+		else
+			c_table[i] = v
+		end
+	end
+
+	return  c_table
+end
+
+
+
 funcs.tween = function(inst: Instance,tween_info: TweenInfo,props)
     local tween_info: TweenInfo = tween_info or TweenInfo.new(
         .1,
