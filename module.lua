@@ -71,8 +71,9 @@ funcs.concat_tables = function(concat_to, ...)
 	return  c_table
 end
 
-
-
+funcs.delta = function(num: number, delta_time: number, fps: number)
+	return num / (delta_time (fps or 1/60))
+end
 
 funcs.tween = function(inst: Instance,tween_info: TweenInfo,props)
     local tween_info: TweenInfo = tween_info or TweenInfo.new(
