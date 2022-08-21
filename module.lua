@@ -31,7 +31,6 @@ funcs._round = function(num: number,div_by: number): number
 	return math.round(num * 100) / div_by
 end
 
-
 funcs.get_in = function(inst: Instance, options)
 	options = do_options(options,
 		{
@@ -80,6 +79,12 @@ end
 
 funcs.delta = function(num: number, delta_time: number)
 	return num / (delta_time / (1/60))
+end
+
+funcs.to_ori = function(cf: CFrame)
+    local x, y, z = cf:ToOrientation()
+
+    return Vector3.new(math.deg(x), math.deg(y), math.deg(z))
 end
 
 funcs.tween = function(inst: Instance,tween_info: TweenInfo,props)
